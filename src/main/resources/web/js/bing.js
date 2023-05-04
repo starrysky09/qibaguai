@@ -457,7 +457,7 @@ class BingChat {
 		//开始运行
 		let res
 		try {
-			res = await fetch(`${window.location.origin}/turing/conversation/create`,{headers:{"NewBingGoGoWeb":"true"}});
+			res = await fetch(`${window.location.origin}/turing/conversation/create`,{headers:{"NewBingWeb":"true"}});
 		} catch (e) {
 			console.warn(e);
 			throw new Error("无法连接到web服务器，请刷新页面重试:" + e.message);
@@ -734,7 +734,7 @@ class ParserReturnMessage{
 		father.innerHTML = `正在生成${message.text}的图片.`;
 
 		try{
-			let response  = await fetch(theUrl,{headers:{"NewBingGoGoWeb":"true"}});
+			let response  = await fetch(theUrl,{headers:{"NewBingWeb":"true"}});
 			let html = (await response.text());
 			let cookieID = response.headers.get('cookieID');
 
@@ -769,7 +769,7 @@ class ParserReturnMessage{
 				count++;
 				let imgPageHtml;
 				try{
-					imgPageHtml = (await (await fetch(imgPageHtmlUrl,{headers:{"cookieID":cookieID,"NewBingGoGoWeb":"true"}})).text());
+					imgPageHtml = (await (await fetch(imgPageHtmlUrl,{headers:{"cookieID":cookieID,"NewBingWeb":"true"}})).text());
 				}catch(e){
 					console.error(e);
 				}
@@ -1252,7 +1252,7 @@ class TitleManager{
 	 * */
 	restart(){
 		this.setSubtitleText('想发什么呢？让我帮你！');
-		document.title = 'NewBingGoGo:聊天啦啦啦啦';
+		document.title = 'NewBing:人力资源';
 	}
 	/**
 	 * 正在创建聊天时
