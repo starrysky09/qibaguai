@@ -1252,7 +1252,7 @@ class TitleManager{
 	 * */
 	restart(){
 		this.setSubtitleText('想发什么呢？让我帮你！');
-		document.title = 'NewBing:人力资源';
+		document.title = 'NewBingWeb:人力资源';
 	}
 	/**
 	 * 正在创建聊天时
